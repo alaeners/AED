@@ -20,3 +20,14 @@ G:\PUC\Aulas\AED - SI\AED_SimonTest\AED_SimonTest\obj\x86\Debug\AED_SimonTest.ex
 G:\PUC\Aulas\AED - SI\AED_SimonTest\AED_SimonTest\obj\x86\Debug\AED_SimonTest.pdb
 G:\PUC\Aulas\AED - SI\AED_SimonTest\AED_SimonTest\bin\Debug\SimonBase.dll
 G:\PUC\Aulas\AED - SI\AED_SimonTest\AED_SimonTest\bin\Debug\SimonBase.pdb
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\bin\Debug\AED_SimonTest.exe
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\bin\Debug\AED_SimonTest.pdb
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\bin\Debug\SimonBase.pdb
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.csprojAssemblyReference.cache
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.Form1.resources
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.Properties.Resources.resources
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.csproj.GenerateResource.cache
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.csproj.CoreCompileInputs.cache
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.csproj.CopyComplete
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.exe
+C:\Users\Alaene\Documents\GitHub\AED\TP1_genius\AED_SimonTest\obj\x86\Debug\AED_SimonTest.pdb

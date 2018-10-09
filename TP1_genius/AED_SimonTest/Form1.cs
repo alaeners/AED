@@ -14,8 +14,7 @@ namespace AED_SimonTest
     {
         
         Botao[] teste = { Botao.AMARELO, Botao.VERDE, Botao.AMARELO, Botao.VERMELHO, Botao.VERMELHO, Botao.AZUL, Botao.VERDE };
-
-
+        
         public Form1(): base()
         {
             InitializeComponent();
@@ -64,8 +63,7 @@ namespace AED_SimonTest
             click(Botao.AZUL);
             btnAzul.Checked = false;
         }
-
-
+        
         private void switchPanel()
         {
             btnAmarelo.Enabled = !btnAmarelo.Enabled;
