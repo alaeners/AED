@@ -45,7 +45,7 @@
             this.btnTeste.Name = "btnTeste";
             this.btnTeste.Size = new System.Drawing.Size(365, 44);
             this.btnTeste.TabIndex = 4;
-            this.btnTeste.Text = "TESTE";
+            this.btnTeste.Text = "PLAY";
             this.btnTeste.UseVisualStyleBackColor = true;
             this.btnTeste.Click += new System.EventHandler(this.button1_Click);
             // 
