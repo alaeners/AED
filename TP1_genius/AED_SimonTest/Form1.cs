@@ -37,6 +37,7 @@ namespace AED_SimonTest
                 {
                     nivel++;
                     switchPanel();
+                    player = null;
                     button1_Click(this, new EventArgs());
                 }
                 else
@@ -46,6 +47,7 @@ namespace AED_SimonTest
                     player = null;
                     switchPanel();
                     MessageBox.Show("PERDEU MANO, TENTA DE NOVO");
+                    btnTeste.Enabled = true;
                 }
             }
         }
@@ -59,7 +61,8 @@ namespace AED_SimonTest
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            int botao = new Random().Next(0, 3);
+            btnTeste.Enabled = false;
+            int botao = new Random().Next(0, 3);            
             if (simon == null)
             {
                 simon = new Queue((Botao)botao);
