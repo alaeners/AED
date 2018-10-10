@@ -42,8 +42,8 @@ namespace AED_SimonTest
                 else
                 {
                     nivel = 1;
-                    simon.Clear();
-                    player.Clear();
+                    simon = null;
+                    player = null;
                     switchPanel();
                     MessageBox.Show("PERDEU MANO, TENTA DE NOVO");
                 }
@@ -60,14 +60,23 @@ namespace AED_SimonTest
         private void button1_Click(object sender, EventArgs e)
         {
             int botao = new Random().Next(0, 3);
-            simon.Enqueue((Botao)botao);
-            Item aux = simon.frente;
-            while (aux.next != null)
+            if (simon == null)
             {
-                click(aux.botao);
+                simon = new Queue((Botao)botao);
+            }
+            else
+            {
+                simon.Enqueue((Botao)botao);
+            }
+            Item aux = simon.frente;
+            click(aux.botao);
+            while (aux.next != null)
+            {   
                 aux = aux.next;
                 System.Threading.Thread.Sleep(200);
+                click(aux.botao);
             }
+            System.Threading.Thread.Sleep(200);
             switchPanel();
         }
         private void btnSair_Click(object sender, EventArgs e)
@@ -76,28 +85,60 @@ namespace AED_SimonTest
         }
         private void btnVerde_Click(object sender, EventArgs e)
         {
-            player.Enqueue(Botao.VERDE);
+            if (player == null)
+            {
+                player = new Queue(Botao.VERDE);
+            }
+            else
+            {
+                player.Enqueue(Botao.VERDE);
+            }
+
             click(Botao.VERDE);
             btnVerde.Checked = false;
             gameIsOnOrOver();
         }
         private void btnVermelho_Click(object sender, EventArgs e)
         {
-            player.Enqueue(Botao.VERMELHO);
+            if (player == null)
+            {
+                player = new Queue(Botao.VERMELHO);
+            }
+            else
+            {
+                player.Enqueue(Botao.VERMELHO);
+            }
+
             click(Botao.VERMELHO);
             btnVermelho.Checked = false;
             gameIsOnOrOver();
         }
         private void btnAmarelo_Click(object sender, EventArgs e)
         {
-            player.Enqueue(Botao.AMARELO);
+            if (player == null)
+            {
+                player = new Queue(Botao.AMARELO);
+            }
+            else
+            {
+                player.Enqueue(Botao.AMARELO);
+            }
+
             click(Botao.AMARELO);
             btnAmarelo.Checked = false;
             gameIsOnOrOver();
         }
         private void btnAzul_Click(object sender, EventArgs e)
         {
-            player.Enqueue(Botao.AZUL);
+            if (player == null)
+            {
+                player = new Queue(Botao.AZUL);
+            }
+            else
+            {
+                player.Enqueue(Botao.AZUL);
+            }
+
             click(Botao.AZUL);
             btnAzul.Checked = false;
             gameIsOnOrOver();

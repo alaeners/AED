@@ -70,7 +70,8 @@ namespace AED_SimonTest
 
         internal void Clear()
         {
-            throw new NotImplementedException();
+            frente = null;
+
         }
 
         // Insere o item el, passado como parâmetro para esse método, no final da fila.
