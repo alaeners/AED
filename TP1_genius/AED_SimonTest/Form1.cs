@@ -1,20 +1,19 @@
 ﻿using SimonBase;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace AED_SimonTest
 {
     public partial class Form1 : SimonForm
     {
-        Botao[] teste = { Botao.AMARELO, Botao.VERDE, Botao.AMARELO, Botao.VERMELHO, Botao.VERMELHO, Botao.AZUL, Botao.VERDE };
-        Queue<Botao> simon = new Queue<Botao>();
-        Queue<Botao> player = new Queue<Botao>();
+        //Botao[] teste = { Botao.AMARELO, Botao.VERDE, Botao.AMARELO, Botao.VERMELHO, Botao.VERMELHO, Botao.AZUL, Botao.VERDE };
+        Queue simon;
+        Queue player;
         int nivel = 1;
 
         public bool verificaNivel()
         {
-            if (nivel == player.Count)
+            if (nivel == player.Count())
             {
                 return true;
             }
@@ -23,7 +22,7 @@ namespace AED_SimonTest
 
         public bool comparaFilas()
         {
-            if (simon == player)
+            if (simon.Dequeue)
             {
                 return true;
             }
@@ -62,9 +61,10 @@ namespace AED_SimonTest
         {
             int botao = new Random().Next(0, 3);
             simon.Enqueue((Botao)botao);
-            foreach (Botao b in simon)
+            Item aux = simon.frente;
+            while (aux.next != null)
             {
-                click(b);
+                click(aux.botao);
                 System.Threading.Thread.Sleep(200);
             }
             switchPanel();
