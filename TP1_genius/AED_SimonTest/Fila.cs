@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using static SimonBase.SimonForm;
-using SimonBase;
 
 namespace AED_SimonTest
 {
@@ -23,6 +19,24 @@ namespace AED_SimonTest
                 cont++;
             }
             return cont;
+        }
+
+        internal bool CompareQueue(Queue player)
+        {
+            Item auxSimon = this.frente, auxPlayer = player.frente;
+            while (auxSimon.next != null)
+            {
+                if (auxSimon.botao != auxPlayer.botao)
+                {
+                    return false;
+                }
+                else
+                {
+                    auxSimon = auxSimon.next;
+                    auxPlayer = auxPlayer.next;
+                }
+            }
+            return true;
         }
 
         // Construtor que cria uma fila vazia inicializando o item da frente da fila e os atributos de controle da fila (frente e tras).
@@ -73,7 +87,7 @@ namespace AED_SimonTest
 
         internal void clickBotoes()
         {
-            
+
         }
 
         /// Retira o item que ocupa a primeira posição da fila. 

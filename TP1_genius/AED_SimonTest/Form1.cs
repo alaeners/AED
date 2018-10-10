@@ -22,7 +22,7 @@ namespace AED_SimonTest
 
         public bool comparaFilas()
         {
-            if (simon.Dequeue)
+            if (simon.CompareQueue(player))
             {
                 return true;
             }
@@ -65,6 +65,7 @@ namespace AED_SimonTest
             while (aux.next != null)
             {
                 click(aux.botao);
+                aux = aux.next;
                 System.Threading.Thread.Sleep(200);
             }
             switchPanel();
