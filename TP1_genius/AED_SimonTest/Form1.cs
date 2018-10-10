@@ -76,10 +76,10 @@ namespace AED_SimonTest
             while (aux.next != null)
             {   
                 aux = aux.next;
-                System.Threading.Thread.Sleep(200);
+                System.Threading.Thread.Sleep(400);
                 click(aux.botao);
             }
-            System.Threading.Thread.Sleep(200);
+            System.Threading.Thread.Sleep(400);
             switchPanel();
         }
         private void btnSair_Click(object sender, EventArgs e)
