@@ -14,7 +14,7 @@ namespace TI_with_SO
     public class ListaCircular
     {
         private Nodo raiz;
-
+        
         public ListaCircular()
         {
             raiz = null;
