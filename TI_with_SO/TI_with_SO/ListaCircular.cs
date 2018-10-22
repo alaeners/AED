@@ -8,8 +8,8 @@ namespace TI_with_SO
 {
     class Nodo
     {
-        public Processo info;
-        public Nodo ant, sig;
+        public Processo dadoProcesso;
+        public Nodo anterior, seguinte;
     }
     public class ListaCircular
     {
@@ -19,48 +19,46 @@ namespace TI_with_SO
         {
             raiz = null;
         }
-
         public void InserirPrimero(Processo x)
         {
-            Nodo nuevo = new Nodo();
-            nuevo.info = x;
+            Nodo inserirPrimeiroNodo = new Nodo();
+            inserirPrimeiroNodo.dadoProcesso = x;
             if (raiz == null)
             {
-                nuevo.sig = nuevo;
-                nuevo.ant = nuevo;
-                raiz = nuevo;
+                inserirPrimeiroNodo.seguinte = inserirPrimeiroNodo;
+                inserirPrimeiroNodo.anterior = inserirPrimeiroNodo;
+                raiz = inserirPrimeiroNodo;
             }
             else
             {
-                Nodo ultimo = raiz.ant;
-                nuevo.sig = raiz;
-                nuevo.ant = ultimo;
-                raiz.ant = nuevo;
-                ultimo.sig = nuevo;
-                raiz = nuevo;
+                Nodo ultimo = raiz.anterior;
+                inserirPrimeiroNodo.seguinte = raiz;
+                inserirPrimeiroNodo.anterior = ultimo;
+                raiz.anterior = inserirPrimeiroNodo;
+                ultimo.seguinte = inserirPrimeiroNodo;
+                raiz = inserirPrimeiroNodo;
             }
         }
 
         public void InserirUltimo(Processo x)
         {
-            Nodo nuevo = new Nodo();
-            nuevo.info = x;
+            Nodo inserirUltimoNodo = new Nodo();
+            inserirUltimoNodo.dadoProcesso = x;
             if (raiz == null)
             {
-                nuevo.sig = nuevo;
-                nuevo.ant = nuevo;
-                raiz = nuevo;
+                inserirUltimoNodo.seguinte = inserirUltimoNodo;
+                inserirUltimoNodo.anterior = inserirUltimoNodo;
+                raiz = inserirUltimoNodo;
             }
             else
             {
-                Nodo ultimo = raiz.ant;
-                nuevo.sig = raiz;
-                nuevo.ant = ultimo;
-                raiz.ant = nuevo;
-                ultimo.sig = nuevo;
+                Nodo ultimo = raiz.anterior;
+                inserirUltimoNodo.seguinte = raiz;
+                inserirUltimoNodo.anterior = ultimo;
+                raiz.anterior = inserirUltimoNodo;
+                ultimo.seguinte = inserirUltimoNodo;
             }
         }
-
         public bool Vazia()
         {
             if (raiz == null)
@@ -68,34 +66,33 @@ namespace TI_with_SO
             else
                 return false;
         }
-
         public void Imprimir()
         {
             if (!Vazia())
             {
-                Nodo reco = raiz;
+                Nodo aux = raiz;
                 do
                 {
-                    Console.Write(reco.info + "-");
-                    reco = reco.sig;
-                } while (reco != raiz);
+                    Console.Write(aux.dadoProcesso + "-");
+                    aux = aux.seguinte;
+                } while (aux != raiz);
                 Console.WriteLine();
             }
         }
 
         public int Count()
         {
-            int cant = 0;
+            int cont = 0;
             if (!Vazia())
             {
-                Nodo reco = raiz;
+                Nodo aux = raiz;
                 do
                 {
-                    cant++;
-                    reco = reco.sig;
-                } while (reco != raiz);
+                    cont++;
+                    aux = aux.seguinte;
+                } while (aux != raiz);
             }
-            return cant;
+            return cont;
         }
 
         public void Remover(int pos)
@@ -110,25 +107,24 @@ namespace TI_with_SO
                     }
                     else
                     {
-                        Nodo ultimo = raiz.ant;
-                        raiz = raiz.sig;
-                        ultimo.sig = raiz;
-                        raiz.ant = ultimo;
+                        Nodo ultimo = raiz.anterior;
+                        raiz = raiz.seguinte;
+                        ultimo.seguinte = raiz;
+                        raiz.anterior = ultimo;
                     }
                 }
                 else
                 {
-                    Nodo reco = raiz;
+                    Nodo aux = raiz;
                     for (int f = 1; f <= pos - 1; f++)
-                        reco = reco.sig;
-                    Nodo anterior = reco.ant;
-                    reco = reco.sig;
-                    anterior.sig = reco;
-                    reco.ant = anterior;
+                        aux = aux.seguinte;
+                    Nodo anterior = aux.anterior;
+                    aux = aux.seguinte;
+                    anterior.seguinte = aux;
+                    aux.anterior = anterior;
                 }
             }
         }
         
     }
 }
-
