@@ -1,0 +1,7 @@
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\bin\Debug\Escalonador.exe.config
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\bin\Debug\Escalonador.exe
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\bin\Debug\Escalonador.pdb
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\obj\Debug\Escalonador.csprojAssemblyReference.cache
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\obj\Debug\Escalonador.csproj.CoreCompileInputs.cache
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\obj\Debug\Escalonador.exe
+c:\users\pedro\documents\visual studio 2017\Projects\Escalonador\Escalonador\obj\Debug\Escalonador.pdb
