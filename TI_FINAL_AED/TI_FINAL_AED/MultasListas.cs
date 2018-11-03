@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TI_FINAL_AED
 {
-    class MultasListas
+    public class MultasListas
     {
         MultasNo _sentinela, _primeiro, _ultimo;
 
@@ -139,6 +139,11 @@ namespace TI_FINAL_AED
                 }                
             }
             return veiculosComMultas;
+        }
+
+        public bool vazia()
+        {
+            return primeiro == ultimo;
         }
     }
 }

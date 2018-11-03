@@ -10,6 +10,11 @@ namespace TI_FINAL_AED
     {
         public DateTime dataPagamento;
 
+        public Taxas(DateTime dataTaxas)
+        {
+            this.dataPagamento = dataTaxas;
+        }
+
         /*Validando se a data de pagamento da taxa é menor que 3 anos*/
         public bool verificaDataPagamento()
         {

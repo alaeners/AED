@@ -10,12 +10,13 @@ namespace TI_FINAL_AED
     {
         string nomeCondutor; 
         public CNH habilitacaoCondutor;
-        MultasListas listaMultasPorCondutor;
+        public MultasListas listaMultasPorCondutor;
 
         public Condutores(string nome, CNH cnh)
         {
             this.nomeCondutor = nome;
             this.habilitacaoCondutor = cnh;
+            listaMultasPorCondutor = new MultasListas();
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TI_FINAL_AED
 {
-    class Multas
+    public class Multas
     {
         public int pontuacaoMulta;
         public double valorMulta;

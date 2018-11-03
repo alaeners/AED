@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace TI_FINAL_AED
 {
-    class Medias : Multas
+    public class Medias : Multas
     {
-        public Medias()
+        public Medias(DateTime dataEmissao, Veiculos veiculo, Condutores condutor)
         {
             this.pontuacaoMulta = 5;
             this.valorMulta = 250.00;
+            this.dataEmissao = dataEmissao;
+            this.veiculo = veiculo;
+            this.condutor = condutor;
         }
+
     }
 }

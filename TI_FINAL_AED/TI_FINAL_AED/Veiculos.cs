@@ -12,6 +12,17 @@ namespace TI_FINAL_AED
         public Taxas seguroObrigatorio;
         public Taxas Licenciamento;
         public string placa;
+        public MultasListas listaMultasPorVeiculo;
+
+        public Veiculos(string placa, DateTime dataIPVA, DateTime dataLicenciamento, DateTime dataSeguroObrigatorio)
+        {
+            this.placa = placa;
+            this.IPVA = new Taxas(dataIPVA);
+            this.seguroObrigatorio = new Taxas(dataSeguroObrigatorio);
+            this.Licenciamento = new Taxas(dataLicenciamento);
+            listaMultasPorVeiculo = new MultasListas();
+
+        }
 
         /*Se ao menos um documento retornar false, o veículo está irregular*/
         public bool verificaRegularidadeVeiculo()

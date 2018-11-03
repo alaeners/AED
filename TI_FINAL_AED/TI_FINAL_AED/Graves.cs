@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace TI_FINAL_AED
 {
-    class Graves : Multas
+    public class Graves : Multas
     {
-        public Graves()
+        public Graves(DateTime dataEmissao, Veiculos veiculo, Condutores condutor)
         {
             this.pontuacaoMulta = 7;
             this.valorMulta = 500.00;
+            this.dataEmissao = dataEmissao;
+            this.veiculo = veiculo;
+            this.condutor = condutor;
         }
     }
 }

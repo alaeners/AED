@@ -44,7 +44,10 @@
             this.verificarRegularidadeDoVeículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verificarRegularidadeDoCondutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.condutorIrregularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,7 +57,7 @@
             this.pesquisasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(769, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(427, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,21 +83,21 @@
             // condutoresToolStripMenuItem
             // 
             this.condutoresToolStripMenuItem.Name = "condutoresToolStripMenuItem";
-            this.condutoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.condutoresToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.condutoresToolStripMenuItem.Text = "Condutores";
             this.condutoresToolStripMenuItem.Click += new System.EventHandler(this.condutoresToolStripMenuItem_Click);
             // 
             // multasToolStripMenuItem
             // 
             this.multasToolStripMenuItem.Name = "multasToolStripMenuItem";
-            this.multasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.multasToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.multasToolStripMenuItem.Text = "Multas";
             this.multasToolStripMenuItem.Click += new System.EventHandler(this.multasToolStripMenuItem_Click);
             // 
             // veículosToolStripMenuItem
             // 
             this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
-            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veículosToolStripMenuItem_Click);
             // 
@@ -137,12 +140,14 @@
             this.listarMultasPorVeículoToolStripMenuItem.Name = "listarMultasPorVeículoToolStripMenuItem";
             this.listarMultasPorVeículoToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
             this.listarMultasPorVeículoToolStripMenuItem.Text = "Listar multas por veículo";
+            this.listarMultasPorVeículoToolStripMenuItem.Click += new System.EventHandler(this.listarMultasPorVeículoToolStripMenuItem_Click);
             // 
             // listarRelatórioDeVeículosSemMultasToolStripMenuItem
             // 
             this.listarRelatórioDeVeículosSemMultasToolStripMenuItem.Name = "listarRelatórioDeVeículosSemMultasToolStripMenuItem";
             this.listarRelatórioDeVeículosSemMultasToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
             this.listarRelatórioDeVeículosSemMultasToolStripMenuItem.Text = "Listar relatório de veículos sem multas.";
+            this.listarRelatórioDeVeículosSemMultasToolStripMenuItem.Click += new System.EventHandler(this.listarRelatórioDeVeículosSemMultasToolStripMenuItem_Click);
             // 
             // veículosSemMultasToolStripMenuItem
             // 
@@ -158,12 +163,14 @@
             this.verificarRegularidadeDoVeículoToolStripMenuItem.Name = "verificarRegularidadeDoVeículoToolStripMenuItem";
             this.verificarRegularidadeDoVeículoToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.verificarRegularidadeDoVeículoToolStripMenuItem.Text = "Verificar regularidade do veículo";
+            this.verificarRegularidadeDoVeículoToolStripMenuItem.Click += new System.EventHandler(this.verificarRegularidadeDoVeículoToolStripMenuItem_Click);
             // 
             // verificarRegularidadeDoCondutorToolStripMenuItem
             // 
             this.verificarRegularidadeDoCondutorToolStripMenuItem.Name = "verificarRegularidadeDoCondutorToolStripMenuItem";
             this.verificarRegularidadeDoCondutorToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.verificarRegularidadeDoCondutorToolStripMenuItem.Text = "Verificar regularidade do condutor";
+            this.verificarRegularidadeDoCondutorToolStripMenuItem.Click += new System.EventHandler(this.verificarRegularidadeDoCondutorToolStripMenuItem_Click);
             // 
             // condutorIrregularToolStripMenuItem
             // 
@@ -171,14 +178,43 @@
             this.condutorIrregularToolStripMenuItem.Size = new System.Drawing.Size(435, 22);
             this.condutorIrregularToolStripMenuItem.Text = "Mostrar o extrato de multas de um condutor.";
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(101, 340);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(246, 96);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Algoritmos e Estruturas de Dados Prof. João Caram                               A" +
+    "laene Rufino de Sousa     Matrícula: 609992                             Sistemas" +
+    " de Informação  --  2/2018";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TI_FINAL_AED.Properties.Resources.logotipo_TI;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(336, 266);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Entrada
             // 
-            this.ClientSize = new System.Drawing.Size(769, 517);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(427, 445);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Entrada";
+            this.Load += new System.EventHandler(this.Entrada_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +238,8 @@
         private System.Windows.Forms.ToolStripMenuItem verificarRegularidadeDoVeículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verificarRegularidadeDoCondutorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

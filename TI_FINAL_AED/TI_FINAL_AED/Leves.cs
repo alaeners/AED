@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace TI_FINAL_AED
 {
-    class Leves : Multas
+    public class Leves : Multas
     {
-        public Leves()
+        public Leves(DateTime dataEmissao, Veiculos veiculo, Condutores condutor)
         {
             this.pontuacaoMulta = 3;
             this.valorMulta = 125.00;
+            this.dataEmissao = dataEmissao;
+            this.veiculo = veiculo;
+            this.condutor = condutor;
         }
     }
 }

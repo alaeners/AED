@@ -42,11 +42,11 @@ namespace TI_FINAL_AED
         private void condutoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] cnhCondutores = File.ReadAllLines("");
+            string cnhNum, nomeCondutor;
+            DateTime dataVencimentoCnh;
+
             for (int i = 0; i < cnhCondutores.Length; i++)
             {
-                string cnhNum, nomeCondutor;
-                DateTime dataVencimentoCnh;
-
                 cnhNum = cnhCondutores[i].Split(';')[0];
                 nomeCondutor = cnhCondutores[i].Split(';')[1];
                 dataVencimentoCnh = Convert.ToDateTime(cnhCondutores[i].Split(';')[2]);
@@ -60,19 +60,87 @@ namespace TI_FINAL_AED
         private void multasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] multas = File.ReadAllLines("");
+            DateTime dataEmissaoMulta;
+            string cnh, placa, tipoMulta;
+
             for (int i = 0; i < multas.Length; i++)
             {
+                cnh = multas[i].Split(';')[0];
+                placa = multas[i].Split(';')[1];
+                dataEmissaoMulta = Convert.ToDateTime(multas[i].Split(';')[2]);
+                tipoMulta = multas[i].Split(';')[4];
 
+                Condutores condutor = tabelaHashCondutores.buscar(long.Parse(cnh));
+                Veiculos veiculo = tabelaHashVeiculos.buscar(placa);
+                Multas multa = null;
+                switch (tipoMulta)
+                {
+                    case "Leve":
+                        multa = new Leves(dataEmissaoMulta, veiculo, condutor);
+                        break;
+
+                    case "Media":
+                        multa = new Medias(dataEmissaoMulta, veiculo, condutor);
+                        break;
+
+                    case "Grave":
+                        multa = new Graves(dataEmissaoMulta, veiculo, condutor);
+                        break;
+
+                    default:
+                        break;
+                }
+                tabelaHashMultas.inserir(multa);
+                condutor.listaMultasPorCondutor.inserir(multa);
+                veiculo.listaMultasPorVeiculo.inserir(multa);
             }
         }
 
         private void veículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] veiculos = File.ReadAllLines("");
+            DateTime dataIPVA = new DateTime();
+            DateTime dataLicenciamento = new DateTime();
+            DateTime dataSeguroObrigatorio = new DateTime(); 
+            string placa = null; 
+
             for (int i = 0; i < veiculos.Length; i++)
             {
-
+                placa = veiculos[i].Split(';')[0];
+                dataIPVA = Convert.ToDateTime(veiculos[i].Split(';')[1]);
+                dataLicenciamento = Convert.ToDateTime(veiculos[i].Split(';')[2]);
+                dataSeguroObrigatorio = Convert.ToDateTime(veiculos[i].Split(';')[3]);
             }
+            Veiculos veiculo = new Veiculos(placa, dataIPVA, dataLicenciamento, dataSeguroObrigatorio);
+            tabelaHashVeiculos.Inserir(veiculo);
+        }
+
+        private void Entrada_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listarMultasPorVeículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarMultasPorVeiculo listarVeiculosPorMultas = new ListarMultasPorVeiculo(tabelaHashVeiculos);
+            this.Hide();
+            listarVeiculosPorMultas.Show();
+        }
+
+        private void listarRelatórioDeVeículosSemMultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioDeVeiculoSemMulta relatorioDeVeiculosSemMulta = new RelatorioDeVeiculoSemMulta(tabelaHashVeiculos);
+            this.Hide();
+            relatorioDeVeiculosSemMulta.Show();
+        }
+
+        private void verificarRegularidadeDoVeículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void verificarRegularidadeDoCondutorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

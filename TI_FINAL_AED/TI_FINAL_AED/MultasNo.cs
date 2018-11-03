@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TI_FINAL_AED
 {
- /// <summary>
-/// Essa classe cria as listas de multas passando os multa como referencia.
-/// </summary>
-    class MultasNo
+    /// <summary>
+    /// Essa classe cria as listas de multas passando os multa como referencia.
+    /// </summary>
+    public class MultasNo
     {
         Multas _multa;
         MultasNo _ant;

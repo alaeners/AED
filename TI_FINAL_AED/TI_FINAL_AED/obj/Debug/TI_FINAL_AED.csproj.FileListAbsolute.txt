@@ -9,3 +9,6 @@ C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\b
 C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.exe
 C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.pdb
 C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.ListarVeiculosConduziuLevouMulta.resources
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.ListarMultasPorVeiculo.resources
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.RelatorioDeVeiculoSemMulta.resources
+C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.VeiculoOuCondutorIrregular.resources
