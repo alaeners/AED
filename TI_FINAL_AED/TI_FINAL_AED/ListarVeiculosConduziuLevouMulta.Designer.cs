@@ -38,7 +38,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 38);
+            this.label2.Location = new System.Drawing.Point(69, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 1;
@@ -47,7 +47,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(186, 35);
+            this.button1.Location = new System.Drawing.Point(251, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 2;
@@ -57,16 +57,16 @@
             // 
             // veiculosComMultaPorCondutorlistView
             // 
-            this.veiculosComMultaPorCondutorlistView.Location = new System.Drawing.Point(16, 78);
+            this.veiculosComMultaPorCondutorlistView.Location = new System.Drawing.Point(27, 51);
             this.veiculosComMultaPorCondutorlistView.Name = "veiculosComMultaPorCondutorlistView";
-            this.veiculosComMultaPorCondutorlistView.Size = new System.Drawing.Size(421, 360);
+            this.veiculosComMultaPorCondutorlistView.Size = new System.Drawing.Size(373, 382);
             this.veiculosComMultaPorCondutorlistView.TabIndex = 3;
             this.veiculosComMultaPorCondutorlistView.UseCompatibleStateImageBehavior = false;
             // 
             // cnhMaskTextBox
             // 
             this.cnhMaskTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnhMaskTextBox.Location = new System.Drawing.Point(66, 35);
+            this.cnhMaskTextBox.Location = new System.Drawing.Point(131, 15);
             this.cnhMaskTextBox.Mask = "00000000000";
             this.cnhMaskTextBox.Name = "cnhMaskTextBox";
             this.cnhMaskTextBox.Size = new System.Drawing.Size(114, 26);
@@ -78,11 +78,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(447, 450);
+            this.ClientSize = new System.Drawing.Size(427, 445);
             this.Controls.Add(this.cnhMaskTextBox);
             this.Controls.Add(this.veiculosComMultaPorCondutorlistView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListarVeiculosConduziuLevouMulta";
             this.Text = "ListarVeiculosConduziuLevouMulta";
             this.Load += new System.EventHandler(this.ListarVeiculosConduziuLevouMulta_Load);

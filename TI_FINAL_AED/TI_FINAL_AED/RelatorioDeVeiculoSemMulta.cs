@@ -25,9 +25,10 @@ namespace TI_FINAL_AED
             for (int i = 0; i < veiculosHash.hashtab.Length; i++)
             {
                 VeiculosNo auxVeiculosNo;
-                while (veiculosHash.hashtab[i].primeiro.prox != null)
+                auxVeiculosNo = veiculosHash.hashtab[i].sentinela;
+                while (auxVeiculosNo.prox != null)
                 {
-                    auxVeiculosNo = veiculosHash.hashtab[i].primeiro.prox;
+                    auxVeiculosNo = auxVeiculosNo.prox;
                     if (auxVeiculosNo.veiculo.listaMultasPorVeiculo.vazia())
                     {
                         veiculosSemMultalistView.Items.Add(auxVeiculosNo.veiculo.placa);

@@ -54,6 +54,12 @@
     <Compile Include="Entrada.Designer.cs">
       <DependentUpon>Entrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExtratoDeMultasDeUmCondutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtratoDeMultasDeUmCondutor.Designer.cs">
+      <DependentUpon>ExtratoDeMultasDeUmCondutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Graves.cs" />
     <Compile Include="Leves.cs" />
     <Compile Include="ListarMultasPorVeiculo.cs">
@@ -97,6 +103,9 @@
     <Compile Include="Veiculos.cs" />
     <EmbeddedResource Include="Entrada.resx">
       <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtratoDeMultasDeUmCondutor.resx">
+      <DependentUpon>ExtratoDeMultasDeUmCondutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarMultasPorVeiculo.resx">
       <DependentUpon>ListarMultasPorVeiculo.cs</DependentUpon>

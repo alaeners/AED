@@ -177,6 +177,7 @@
             this.condutorIrregularToolStripMenuItem.Name = "condutorIrregularToolStripMenuItem";
             this.condutorIrregularToolStripMenuItem.Size = new System.Drawing.Size(435, 22);
             this.condutorIrregularToolStripMenuItem.Text = "Mostrar o extrato de multas de um condutor.";
+            this.condutorIrregularToolStripMenuItem.Click += new System.EventHandler(this.condutorIrregularToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -209,7 +210,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Entrada";
             this.Load += new System.EventHandler(this.Entrada_Load);
             this.menuStrip1.ResumeLayout(false);

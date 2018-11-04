@@ -28,13 +28,13 @@ namespace TI_FINAL_AED
         {
             multasPorVeiculoListView.Items.Clear();
             string placa = placaMaskedTextBox.Text;
-            MultasNo auxMultas;
             Veiculos veiculo = veiculosHash.buscar(placa);
+            MultasNo auxMultas = veiculo.listaMultasPorVeiculo.sentinela;
             if (veiculo != null)
             {
-                while (veiculo.listaMultasPorVeiculo.primeiro.prox != null)
+                while (auxMultas.prox != null)
                 {
-                    auxMultas = veiculo.listaMultasPorVeiculo.primeiro.prox;
+                    auxMultas = auxMultas.prox;
                     multasPorVeiculoListView.Items.Add(auxMultas.multa.condutor.habilitacaoCondutor.cnh, auxMultas.multa.dataEmissao.ToShortDateString());
                 }
             }

@@ -38,7 +38,7 @@
             // 
             this.placaLabel.AutoSize = true;
             this.placaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placaLabel.Location = new System.Drawing.Point(23, 25);
+            this.placaLabel.Location = new System.Drawing.Point(44, 21);
             this.placaLabel.Name = "placaLabel";
             this.placaLabel.Size = new System.Drawing.Size(76, 20);
             this.placaLabel.TabIndex = 0;
@@ -47,26 +47,26 @@
             // placaMaskedTextBox
             // 
             this.placaMaskedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placaMaskedTextBox.Location = new System.Drawing.Point(105, 22);
+            this.placaMaskedTextBox.Location = new System.Drawing.Point(126, 15);
             this.placaMaskedTextBox.Mask = "AAA-0000";
             this.placaMaskedTextBox.Name = "placaMaskedTextBox";
-            this.placaMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.placaMaskedTextBox.Size = new System.Drawing.Size(76, 26);
             this.placaMaskedTextBox.TabIndex = 1;
             // 
             // multasPorVeiculoListView
             // 
             this.multasPorVeiculoListView.Location = new System.Drawing.Point(27, 56);
             this.multasPorVeiculoListView.Name = "multasPorVeiculoListView";
-            this.multasPorVeiculoListView.Size = new System.Drawing.Size(307, 382);
+            this.multasPorVeiculoListView.Size = new System.Drawing.Size(373, 382);
             this.multasPorVeiculoListView.TabIndex = 2;
             this.multasPorVeiculoListView.UseCompatibleStateImageBehavior = false;
             // 
             // listaMultaPorVeiculoButton
             // 
             this.listaMultaPorVeiculoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaMultaPorVeiculoButton.Location = new System.Drawing.Point(211, 22);
+            this.listaMultaPorVeiculoButton.Location = new System.Drawing.Point(208, 15);
             this.listaMultaPorVeiculoButton.Name = "listaMultaPorVeiculoButton";
-            this.listaMultaPorVeiculoButton.Size = new System.Drawing.Size(96, 28);
+            this.listaMultaPorVeiculoButton.Size = new System.Drawing.Size(100, 28);
             this.listaMultaPorVeiculoButton.TabIndex = 3;
             this.listaMultaPorVeiculoButton.Text = "Buscar";
             this.listaMultaPorVeiculoButton.UseVisualStyleBackColor = true;
@@ -76,11 +76,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 450);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(427, 445);
             this.Controls.Add(this.listaMultaPorVeiculoButton);
             this.Controls.Add(this.multasPorVeiculoListView);
             this.Controls.Add(this.placaMaskedTextBox);
             this.Controls.Add(this.placaLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ListarMultasPorVeiculo";
             this.Text = "ListarMultasPorVeiculo";
             this.Load += new System.EventHandler(this.ListarMultasPorVeiculo_Load);

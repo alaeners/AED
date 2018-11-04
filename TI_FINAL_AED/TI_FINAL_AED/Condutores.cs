@@ -23,7 +23,8 @@ namespace TI_FINAL_AED
         // verifica se o condutor esta com a CNH regular
         public bool verificarRegularidadeCNH()
         {
-            if (listaMultasPorCondutor.verificaPontuacaoMultas() > 21)
+            if (listaMultasPorCondutor.verificaPontuacaoMultas() > 21
+                || !habilitacaoCondutor.verificaDataValidadeCNH())
             {
                 return false;
             }

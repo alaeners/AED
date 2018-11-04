@@ -39,14 +39,14 @@ namespace TI_FINAL_AED
         {
             veiculosComMultaPorCondutorlistView.Items.Clear();
             string cnhCondutor = cnhMaskTextBox.Text;
-            VeiculosNo auxVeiculo;
             Condutores condutor = condutoresHash.buscar(long.Parse(cnhCondutor));
             if (condutor != null)
             {
                 VeiculosListas veiculosComMultaPorCondutor = condutor.GetVeiculosComMulta();
-                while (veiculosComMultaPorCondutor.primeiro.prox != null)
+                VeiculosNo auxVeiculo = veiculosComMultaPorCondutor.sentinela;
+                while (auxVeiculo.prox != null)
                 {
-                    auxVeiculo = veiculosComMultaPorCondutor.primeiro.prox;
+                    auxVeiculo = auxVeiculo.prox;
                     veiculosComMultaPorCondutorlistView.Items.Add(auxVeiculo.veiculo.placa);
                 }
             }

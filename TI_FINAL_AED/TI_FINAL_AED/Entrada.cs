@@ -31,7 +31,8 @@ namespace TI_FINAL_AED
         {
             ListarVeiculosConduziuLevouMulta listarVeiculosConduziuLevouMulta = new ListarVeiculosConduziuLevouMulta(tabelaHashCondutores);
             this.Hide();
-            listarVeiculosConduziuLevouMulta.Show();
+            listarVeiculosConduziuLevouMulta.ShowDialog();
+            this.Show();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,24 +125,37 @@ namespace TI_FINAL_AED
         {
             ListarMultasPorVeiculo listarVeiculosPorMultas = new ListarMultasPorVeiculo(tabelaHashVeiculos);
             this.Hide();
-            listarVeiculosPorMultas.Show();
+            listarVeiculosPorMultas.ShowDialog();
+            this.Show();
         }
-
         private void listarRelatórioDeVeículosSemMultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RelatorioDeVeiculoSemMulta relatorioDeVeiculosSemMulta = new RelatorioDeVeiculoSemMulta(tabelaHashVeiculos);
             this.Hide();
-            relatorioDeVeiculosSemMulta.Show();
+            relatorioDeVeiculosSemMulta.ShowDialog();
+            this.Show();
         }
-
         private void verificarRegularidadeDoVeículoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            VeiculoOuCondutorIrregular veiculoIrregular = new VeiculoOuCondutorIrregular(true,false, tabelaHashVeiculos, tabelaHashCondutores);
+            this.Hide();
+            veiculoIrregular.ShowDialog();
+            this.Show();
         }
-
         private void verificarRegularidadeDoCondutorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            VeiculoOuCondutorIrregular condutorIrregular = new VeiculoOuCondutorIrregular(false, true, tabelaHashVeiculos, tabelaHashCondutores);
+            this.Hide();            
+            condutorIrregular.ShowDialog();
+            this.Show();
+        }
 
+        private void condutorIrregularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExtratoDeMultasDeUmCondutor extrato = new ExtratoDeMultasDeUmCondutor(tabelaHashCondutores);
+            this.Hide();
+            extrato.ShowDialog();
+            this.Show();
         }
     }
 }

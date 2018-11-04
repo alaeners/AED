@@ -33,9 +33,9 @@
             // 
             // veiculosSemMultalistView
             // 
-            this.veiculosSemMultalistView.Location = new System.Drawing.Point(13, 33);
+            this.veiculosSemMultalistView.Location = new System.Drawing.Point(28, 51);
             this.veiculosSemMultalistView.Name = "veiculosSemMultalistView";
-            this.veiculosSemMultalistView.Size = new System.Drawing.Size(358, 405);
+            this.veiculosSemMultalistView.Size = new System.Drawing.Size(373, 382);
             this.veiculosSemMultalistView.TabIndex = 0;
             this.veiculosSemMultalistView.UseCompatibleStateImageBehavior = false;
             // 
@@ -43,7 +43,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 450);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(427, 445);
             this.Controls.Add(this.veiculosSemMultalistView);
             this.Name = "RelatorioDeVeiculoSemMulta";
             this.Text = "RelatorioDeVeiculoSemMulta";
