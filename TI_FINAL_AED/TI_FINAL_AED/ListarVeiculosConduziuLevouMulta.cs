@@ -39,7 +39,7 @@ namespace TI_FINAL_AED
         {
             veiculosComMultaPorCondutorlistView.Items.Clear();
             string cnhCondutor = cnhMaskTextBox.Text;
-            Condutores condutor = condutoresHash.buscar(long.Parse(cnhCondutor));
+            Condutores condutor = condutoresHash.buscar(cnhCondutor);
             if (condutor != null)
             {
                 VeiculosListas veiculosComMultaPorCondutor = condutor.GetVeiculosComMulta();

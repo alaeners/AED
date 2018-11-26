@@ -42,14 +42,14 @@ namespace TI_FINAL_AED
 
         private void condutoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] cnhCondutores = File.ReadAllLines("");
+            String[] cnhCondutores = File.ReadAllLines("CONDUTORES.txt");
             string cnhNum, nomeCondutor;
             DateTime dataVencimentoCnh;
 
             for (int i = 0; i < cnhCondutores.Length; i++)
             {
-                cnhNum = cnhCondutores[i].Split(';')[0];
-                nomeCondutor = cnhCondutores[i].Split(';')[1];
+                cnhNum = cnhCondutores[i].Split(';')[1];
+                nomeCondutor = cnhCondutores[i].Split(';')[0];
                 dataVencimentoCnh = Convert.ToDateTime(cnhCondutores[i].Split(';')[2]);
                                 
                 CNH cnh = new CNH(cnhNum, dataVencimentoCnh);
@@ -60,7 +60,7 @@ namespace TI_FINAL_AED
 
         private void multasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] multas = File.ReadAllLines("");
+            String[] multas = File.ReadAllLines("MULTAS.txt");
             DateTime dataEmissaoMulta;
             string cnh, placa, tipoMulta;
 
@@ -68,23 +68,23 @@ namespace TI_FINAL_AED
             {
                 cnh = multas[i].Split(';')[0];
                 placa = multas[i].Split(';')[1];
-                dataEmissaoMulta = Convert.ToDateTime(multas[i].Split(';')[2]);
-                tipoMulta = multas[i].Split(';')[4];
+                dataEmissaoMulta = Convert.ToDateTime(multas[i].Split(';')[3]);
+                tipoMulta = multas[i].Split(';')[2];
 
-                Condutores condutor = tabelaHashCondutores.buscar(long.Parse(cnh));
+                Condutores condutor = tabelaHashCondutores.buscar(cnh);
                 Veiculos veiculo = tabelaHashVeiculos.buscar(placa);
                 Multas multa = null;
                 switch (tipoMulta)
                 {
-                    case "Leve":
+                    case "1":
                         multa = new Leves(dataEmissaoMulta, veiculo, condutor);
                         break;
 
-                    case "Media":
+                    case "2":
                         multa = new Medias(dataEmissaoMulta, veiculo, condutor);
                         break;
 
-                    case "Grave":
+                    case "3":
                         multa = new Graves(dataEmissaoMulta, veiculo, condutor);
                         break;
 
@@ -99,21 +99,15 @@ namespace TI_FINAL_AED
 
         private void veículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] veiculos = File.ReadAllLines("");
-            DateTime dataIPVA = new DateTime();
-            DateTime dataLicenciamento = new DateTime();
-            DateTime dataSeguroObrigatorio = new DateTime(); 
+            String[] veiculos = File.ReadAllLines("veiculos.txt");
             string placa = null; 
 
             for (int i = 0; i < veiculos.Length; i++)
             {
                 placa = veiculos[i].Split(';')[0];
-                dataIPVA = Convert.ToDateTime(veiculos[i].Split(';')[1]);
-                dataLicenciamento = Convert.ToDateTime(veiculos[i].Split(';')[2]);
-                dataSeguroObrigatorio = Convert.ToDateTime(veiculos[i].Split(';')[3]);
+                Veiculos veiculo = new Veiculos(placa);
+                tabelaHashVeiculos.Inserir(veiculo);
             }
-            Veiculos veiculo = new Veiculos(placa, dataIPVA, dataLicenciamento, dataSeguroObrigatorio);
-            tabelaHashVeiculos.Inserir(veiculo);
         }
 
         private void Entrada_Load(object sender, EventArgs e)
@@ -156,6 +150,24 @@ namespace TI_FINAL_AED
             this.Hide();
             extrato.ShowDialog();
             this.Show();
+        }
+
+        private void taxasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String[] taxas = File.ReadAllLines("TAXAS.txt");
+            string placa;
+            int ano;
+            Veiculos veiculo;
+
+            for (int i = 0; i < taxas.Length; i++)
+            {
+                placa = taxas[i].Split(';')[0];
+                ano = int.Parse(taxas[i].Split(';')[2]);
+
+                veiculo = tabelaHashVeiculos.buscar(placa);
+
+                veiculo.inserirTaxa(taxas[i].Split(';')[1], ano);
+            }
         }
     }
 }

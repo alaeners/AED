@@ -82,6 +82,8 @@
     <Compile Include="RelatorioDeVeiculoSemMulta.Designer.cs">
       <DependentUpon>RelatorioDeVeiculoSemMulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaxasListas.cs" />
+    <Compile Include="TaxasNo.cs" />
     <Compile Include="VeiculoOuCondutorIrregular.cs">
       <SubType>Form</SubType>
     </Compile>

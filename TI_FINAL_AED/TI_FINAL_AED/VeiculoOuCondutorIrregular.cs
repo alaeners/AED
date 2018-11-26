@@ -80,7 +80,7 @@ namespace TI_FINAL_AED
         private void verificaCNHButton_Click(object sender, EventArgs e)
         {
             string cnhCondutor = cnhMaskedTextBox.Text;
-            Condutores condutor = condutores.buscar(long.Parse(cnhCondutor));
+            Condutores condutor = condutores.buscar(cnhCondutor);
             if (condutor != null)
             {
                 if (condutor.verificarRegularidadeCNH())

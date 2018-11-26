@@ -8,17 +8,17 @@ namespace TI_FINAL_AED
 {
     public class Taxas
     {
-        public DateTime dataPagamento;
+        public int anoPagamento;
 
-        public Taxas(DateTime dataTaxas)
+        public Taxas(int anoTaxas)
         {
-            this.dataPagamento = dataTaxas;
+            this.anoPagamento = anoTaxas;
         }
 
         /*Validando se a data de pagamento da taxa é menor que 3 anos*/
         public bool verificaDataPagamento()
         {
-            if (dataPagamento < DateTime.Now.AddYears(-3))
+            if (anoPagamento < DateTime.Now.AddYears(-3).Year)
             {
                 return false;
             }

@@ -63,13 +63,13 @@ namespace TI_FINAL_AED
             }
             return null;
         }
-        public Condutores procurar(long habilitacao)
+        public Condutores procurar(string habilitacao)
         {
             CondutoresNo aux = sentinela;
             while (aux.prox != null)
             {
                 aux = aux.prox;
-                if (aux.condutor.habilitacaoCondutor.cnh.Equals(habilitacao.ToString()))
+                if (aux.condutor.habilitacaoCondutor.cnh.Equals(habilitacao))
                 {
                     return aux.condutor;
                 }

@@ -8,20 +8,19 @@ namespace TI_FINAL_AED
 {
     public class Veiculos
     {
-        public Taxas IPVA;
-        public Taxas seguroObrigatorio;
-        public Taxas Licenciamento;
+        public TaxasListas IPVA;
+        public TaxasListas seguroObrigatorio;
+        public TaxasListas Licenciamento;
         public string placa;
         public MultasListas listaMultasPorVeiculo;
 
-        public Veiculos(string placa, DateTime dataIPVA, DateTime dataLicenciamento, DateTime dataSeguroObrigatorio)
+        public Veiculos(string placa)
         {
             this.placa = placa;
-            this.IPVA = new Taxas(dataIPVA);
-            this.seguroObrigatorio = new Taxas(dataSeguroObrigatorio);
-            this.Licenciamento = new Taxas(dataLicenciamento);
             listaMultasPorVeiculo = new MultasListas();
-
+            IPVA = new TaxasListas();
+            Licenciamento = new TaxasListas();
+            seguroObrigatorio = new TaxasListas();
         }
 
         /*Se ao menos um documento retornar false, o veículo está irregular*/
@@ -34,6 +33,26 @@ namespace TI_FINAL_AED
                 return false;
             }
             return true;
+        }
+
+        internal void inserirTaxa(string taxa, int ano)
+        {
+
+            switch (taxa)
+            {
+                case "1":
+                    IPVA.inserir(new Taxas(ano));
+                    break;
+                case "2":
+                    seguroObrigatorio.inserir(new Taxas(ano));
+                    break;
+                case "3":
+                    Licenciamento.inserir(new Taxas(ano));
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

@@ -46,6 +46,7 @@
             this.condutorIrregularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.taxasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,8 @@
             this.carregarDadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.condutoresToolStripMenuItem,
             this.multasToolStripMenuItem,
-            this.veículosToolStripMenuItem});
+            this.veículosToolStripMenuItem,
+            this.taxasToolStripMenuItem});
             this.carregarDadosToolStripMenuItem.Name = "carregarDadosToolStripMenuItem";
             this.carregarDadosToolStripMenuItem.Size = new System.Drawing.Size(415, 22);
             this.carregarDadosToolStripMenuItem.Text = "Ler os dados acima de arquivos de condutores, veículos e multas";
@@ -83,21 +85,21 @@
             // condutoresToolStripMenuItem
             // 
             this.condutoresToolStripMenuItem.Name = "condutoresToolStripMenuItem";
-            this.condutoresToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.condutoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.condutoresToolStripMenuItem.Text = "Condutores";
             this.condutoresToolStripMenuItem.Click += new System.EventHandler(this.condutoresToolStripMenuItem_Click);
             // 
             // multasToolStripMenuItem
             // 
             this.multasToolStripMenuItem.Name = "multasToolStripMenuItem";
-            this.multasToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.multasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.multasToolStripMenuItem.Text = "Multas";
             this.multasToolStripMenuItem.Click += new System.EventHandler(this.multasToolStripMenuItem_Click);
             // 
             // veículosToolStripMenuItem
             // 
             this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
-            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veículosToolStripMenuItem_Click);
             // 
@@ -202,6 +204,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // taxasToolStripMenuItem
+            // 
+            this.taxasToolStripMenuItem.Name = "taxasToolStripMenuItem";
+            this.taxasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.taxasToolStripMenuItem.Text = "Taxas";
+            this.taxasToolStripMenuItem.Click += new System.EventHandler(this.taxasToolStripMenuItem_Click);
+            // 
             // Entrada
             // 
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
@@ -244,6 +253,7 @@
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem taxasToolStripMenuItem;
     }
 }
 

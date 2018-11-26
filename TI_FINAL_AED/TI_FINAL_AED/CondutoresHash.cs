@@ -51,9 +51,9 @@ namespace TI_FINAL_AED
             hashtab[hashCode(long.Parse(novo.habilitacaoCondutor.cnh))].inserir(novo);
         }
 
-        public Condutores buscar(long cnh)
+        public Condutores buscar(string cnh)
         {
-            Condutores holder = hashtab[hashCode(cnh)].procurar(cnh);
+            Condutores holder = hashtab[hashCode(long.Parse(cnh))].procurar(cnh);
             return holder;
         }
     }

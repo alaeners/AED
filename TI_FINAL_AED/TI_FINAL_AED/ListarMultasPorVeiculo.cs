@@ -35,7 +35,7 @@ namespace TI_FINAL_AED
                 while (auxMultas.prox != null)
                 {
                     auxMultas = auxMultas.prox;
-                    multasPorVeiculoListView.Items.Add(auxMultas.multa.condutor.habilitacaoCondutor.cnh, auxMultas.multa.dataEmissao.ToShortDateString());
+                    multasPorVeiculoListView.Items.Add(auxMultas.multa.condutor.habilitacaoCondutor.cnh + " " + auxMultas.multa.dataEmissao.ToShortDateString());
                 }
             }
             else
