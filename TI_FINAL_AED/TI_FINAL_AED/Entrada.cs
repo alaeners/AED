@@ -16,6 +16,8 @@ namespace TI_FINAL_AED
         CondutoresHash tabelaHashCondutores = new CondutoresHash();
         MultasHash tabelaHashMultas = new MultasHash();
         VeiculosHash tabelaHashVeiculos = new VeiculosHash();
+        bool condutoresFlag = false;
+        bool veiculosFlag = false;
 
         public Entrada()
         {
@@ -42,9 +44,10 @@ namespace TI_FINAL_AED
 
         private void condutoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] cnhCondutores = File.ReadAllLines("CONDUTORES.txt");
+            String[] cnhCondutores = File.ReadAllLines("condutores.txt");
             string cnhNum, nomeCondutor;
             DateTime dataVencimentoCnh;
+            int cont = 0; 
 
             for (int i = 0; i < cnhCondutores.Length; i++)
             {
@@ -55,59 +58,80 @@ namespace TI_FINAL_AED
                 CNH cnh = new CNH(cnhNum, dataVencimentoCnh);
                 Condutores condutor = new Condutores(nomeCondutor, cnh);
                 tabelaHashCondutores.inserir(condutor);
-            }            
+                cont++;
+            }
+            condutoresToolStripMenuItem.Enabled = false;
+            MessageBox.Show("Foram Lidos: " + cont + " Condutores");
+            condutoresFlag = true;
         }
 
         private void multasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] multas = File.ReadAllLines("MULTAS.txt");
-            DateTime dataEmissaoMulta;
-            string cnh, placa, tipoMulta;
-
-            for (int i = 0; i < multas.Length; i++)
+            if (condutoresFlag && veiculosFlag)
             {
-                cnh = multas[i].Split(';')[0];
-                placa = multas[i].Split(';')[1];
-                dataEmissaoMulta = Convert.ToDateTime(multas[i].Split(';')[3]);
-                tipoMulta = multas[i].Split(';')[2];
+                String[] multas = File.ReadAllLines("multas.txt");
+                DateTime dataEmissaoMulta;
+                string cnh, placa, tipoMulta;
+                int cont = 0;
 
-                Condutores condutor = tabelaHashCondutores.buscar(cnh);
-                Veiculos veiculo = tabelaHashVeiculos.buscar(placa);
-                Multas multa = null;
-                switch (tipoMulta)
+                for (int i = 0; i < multas.Length; i++)
                 {
-                    case "1":
-                        multa = new Leves(dataEmissaoMulta, veiculo, condutor);
-                        break;
+                    cnh = multas[i].Split(';')[0];
+                    placa = multas[i].Split(';')[1];
+                    dataEmissaoMulta = Convert.ToDateTime(multas[i].Split(';')[3]);
+                    tipoMulta = multas[i].Split(';')[2];
 
-                    case "2":
-                        multa = new Medias(dataEmissaoMulta, veiculo, condutor);
-                        break;
+                    Condutores condutor = tabelaHashCondutores.buscar(cnh);
+                    Veiculos veiculo = tabelaHashVeiculos.buscar(placa);
+                    Multas multa = null;
+                    switch (tipoMulta)
+                    {
+                        case "1":
+                            multa = new Leves(dataEmissaoMulta, veiculo, condutor);
+                            break;
 
-                    case "3":
-                        multa = new Graves(dataEmissaoMulta, veiculo, condutor);
-                        break;
+                        case "2":
+                            multa = new Medias(dataEmissaoMulta, veiculo, condutor);
+                            break;
 
-                    default:
-                        break;
+                        case "3":
+                            multa = new Graves(dataEmissaoMulta, veiculo, condutor);
+                            break;
+
+                        default:
+                            break;
+                    }
+                    tabelaHashMultas.inserir(multa);
+                    condutor.listaMultasPorCondutor.inserir(multa);
+                    veiculo.listaMultasPorVeiculo.inserir(multa);
+                    cont++;
                 }
-                tabelaHashMultas.inserir(multa);
-                condutor.listaMultasPorCondutor.inserir(multa);
-                veiculo.listaMultasPorVeiculo.inserir(multa);
+                multasToolStripMenuItem.Enabled = false;
+                MessageBox.Show("Foram Lidas: " + cont + " Multas");
+            }
+            else
+            {
+                MessageBox.Show("Os dados de Veículos("+veiculosFlag+") ou Condutores("+condutoresFlag+") não foram carregados. Impossível executar essa ação.");
             }
         }
 
         private void veículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] veiculos = File.ReadAllLines("veiculos.txt");
-            string placa = null; 
+            string placa = null;
+            int cont = 0;
 
             for (int i = 0; i < veiculos.Length; i++)
             {
                 placa = veiculos[i].Split(';')[0];
                 Veiculos veiculo = new Veiculos(placa);
                 tabelaHashVeiculos.Inserir(veiculo);
+                cont++;
             }
+            veículosToolStripMenuItem.Enabled = false;
+            MessageBox.Show("Foram Lidos: " + cont + " Veículos");
+            veiculosFlag = true;
+            
         }
 
         private void Entrada_Load(object sender, EventArgs e)
@@ -154,20 +178,36 @@ namespace TI_FINAL_AED
 
         private void taxasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String[] taxas = File.ReadAllLines("TAXAS.txt");
-            string placa;
-            int ano;
-            Veiculos veiculo;
+            if (condutoresFlag && veiculosFlag)
+            { 
+                String[] taxas = File.ReadAllLines("impostos.txt");
+                string placa;
+                int ano;
+                Veiculos veiculo;
+                int cont = 0;
 
-            for (int i = 0; i < taxas.Length; i++)
-            {
-                placa = taxas[i].Split(';')[0];
-                ano = int.Parse(taxas[i].Split(';')[2]);
+                for (int i = 0; i < taxas.Length; i++)
+                {
+                    placa = taxas[i].Split(';')[0];
+                    ano = int.Parse(taxas[i].Split(';')[2]);
 
-                veiculo = tabelaHashVeiculos.buscar(placa);
+                    veiculo = tabelaHashVeiculos.buscar(placa);
 
-                veiculo.inserirTaxa(taxas[i].Split(';')[1], ano);
+                    veiculo.inserirTaxa(taxas[i].Split(';')[1], ano);
+                    cont++;
+                }
+                taxasToolStripMenuItem.Enabled = false;
+                MessageBox.Show("Foram Lidas: " + cont + " Taxas");
             }
+            else
+            {
+                MessageBox.Show("Os dados de Veículos("+veiculosFlag+") ou Condutores("+condutoresFlag+") não foram carregados. Impossível executar essa ação.");
+            }
+        }
+
+        private void carregarDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Para funcionamento é necessário carregar: CONDUTORES OU VEICULOS :primeiro");
         }
     }
 }

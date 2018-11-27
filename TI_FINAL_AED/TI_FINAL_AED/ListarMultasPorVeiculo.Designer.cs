@@ -60,6 +60,7 @@
             this.multasPorVeiculoListView.Size = new System.Drawing.Size(373, 382);
             this.multasPorVeiculoListView.TabIndex = 2;
             this.multasPorVeiculoListView.UseCompatibleStateImageBehavior = false;
+            this.multasPorVeiculoListView.View = System.Windows.Forms.View.List;
             // 
             // listaMultaPorVeiculoButton
             // 

@@ -37,22 +37,30 @@ namespace TI_FINAL_AED
 
         private void button1_Click(object sender, EventArgs e)
         {
-            veiculosComMultaPorCondutorlistView.Items.Clear();
-            string cnhCondutor = cnhMaskTextBox.Text;
-            Condutores condutor = condutoresHash.buscar(cnhCondutor);
-            if (condutor != null)
+            if (cnhMaskTextBox.Text == "")
             {
-                VeiculosListas veiculosComMultaPorCondutor = condutor.GetVeiculosComMulta();
-                VeiculosNo auxVeiculo = veiculosComMultaPorCondutor.sentinela;
-                while (auxVeiculo.prox != null)
-                {
-                    auxVeiculo = auxVeiculo.prox;
-                    veiculosComMultaPorCondutorlistView.Items.Add(auxVeiculo.veiculo.placa);
-                }
+                MessageBox.Show("Campo Vazio - Informe uma CNH");
             }
             else
             {
-                MessageBox.Show("Condutor não encontrado");
+                veiculosComMultaPorCondutorlistView.Items.Clear();
+                string cnhCondutor = cnhMaskTextBox.Text;
+                Condutores condutor = condutoresHash.buscar(cnhCondutor);
+                if (condutor != null)
+                {
+                    VeiculosListas veiculosComMultaPorCondutor = condutor.GetVeiculosComMulta();
+                    VeiculosNo auxVeiculo = veiculosComMultaPorCondutor.sentinela;
+                    while (auxVeiculo.prox != null)
+                    {
+                        auxVeiculo = auxVeiculo.prox;
+                        veiculosComMultaPorCondutorlistView.Items.Add(auxVeiculo.veiculo.placa);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Condutor não encontrado");
+                }
+
             }
         }
 

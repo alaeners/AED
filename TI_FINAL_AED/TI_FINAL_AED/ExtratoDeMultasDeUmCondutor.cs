@@ -25,14 +25,43 @@ namespace TI_FINAL_AED
         }
         private void listarExtratoButton_Click(object sender, EventArgs e)
         {
-           string cnhCondutor = cnhExtratoMaskTextBox.Text;
-           Condutores condutor = condutores.buscar(cnhCondutor);
-           MultasNo auxMultas = condutor.listaMultasPorCondutor.sentinela;
-            while (auxMultas.prox != null)
+            listView1.Clear();
+            if (cnhExtratoMaskTextBox.Text == "") 
             {
-                auxMultas = auxMultas.prox;
-                listView1.Items.Add(auxMultas.multa.veiculo.placa + " " + auxMultas.multa.dataEmissao.ToShortDateString());
+                MessageBox.Show("Campo Vazio - Informe uma CNH");
             }
+            else
+            {
+                string cnhCondutor = cnhExtratoMaskTextBox.Text;
+                Condutores condutor = condutores.buscar(cnhCondutor);
+                if (condutor != null)
+                {
+                    label1.Text = condutor.nomeCondutor;
+                    Multas[] vetMulta = condutor.listaMultasPorCondutor.OrdenaMultas();
+
+                    foreach (var multa in vetMulta)
+                    {
+                        listView1.Items.Add(multa.dataEmissao.ToShortDateString() + " " + multa.veiculo.placa);
+                    }
+
+                    //MultasNo auxMultas = condutor.listaMultasPorCondutor.sentinela;
+                    //while (auxMultas.prox != null)
+                    //{
+                    //    auxMultas = auxMultas.prox;
+                    //    listView1.Items.Add(condutor.nomeCondutor + " " + auxMultas.multa.veiculo.placa + " " + auxMultas.multa.dataEmissao.ToShortDateString());
+                    //}
+                }
+                else
+                {
+                    MessageBox.Show("Condutor não encontrado!", "Condutor não encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -48,27 +48,61 @@ namespace TI_FINAL_AED
             }
             else
             {
-                while (auxiliar.prox != null)
-                {
-                    auxiliar = auxiliar.prox;
 
-                    if (auxiliar.multa.dataEmissao > novo.multa.dataEmissao)
-                    {
-                        auxiliar2.prox = novo;
-                        novo.prox = auxiliar;
-                        return;
-                    }
-                    else if (auxiliar == ultimo)
-                    {
-                        ultimo.prox = novo;
-                        ultimo = novo;
-                        return;
-                    }
-                    auxiliar2 = auxiliar2.prox;
-                }
+                ultimo.prox = novo;
+                novo.prox = null;
+                ultimo = novo;
+
+                //while (auxiliar.prox != null)
+                //{
+                //    auxiliar = auxiliar.prox;
+
+                //    if (auxiliar.multa.dataEmissao > novo.multa.dataEmissao)
+                //    {
+                //        auxiliar2.prox = novo;
+                //        novo.prox = auxiliar;
+                //        return;
+                //    }
+                //    else if (auxiliar == ultimo)
+                //    {
+                //        ultimo.prox = novo;
+                //        ultimo = novo;
+                //        return;
+                //    }
+                //    auxiliar2 = auxiliar2.prox;
+                //}
             }
 
 
+        }
+
+        internal Multas[] OrdenaMultas()
+        {
+            Multas[] vet = this.ListaParaVetor();
+            return QuickSort.quickSort(vet);
+        }
+
+        private Multas[] ListaParaVetor()
+        {
+            MultasNo aux = sentinela;
+            int cont = 0;
+            while (aux.prox != null)
+            {
+                aux = aux.prox;
+                cont++;
+            }
+
+            Multas[] ret = new Multas[cont];
+
+            aux = sentinela;
+            cont = 0;
+            while (aux.prox != null)
+            {
+                aux = aux.prox;
+                ret[cont] = aux.multa;
+                cont++;
+            }
+            return ret;
         }
 
         public Multas Buscar(string placa, long CNH, DateTime data)

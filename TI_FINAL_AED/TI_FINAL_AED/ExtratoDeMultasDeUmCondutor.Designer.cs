@@ -32,6 +32,7 @@
             this.cnhExtratoLabel = new System.Windows.Forms.Label();
             this.cnhExtratoMaskTextBox = new System.Windows.Forms.MaskedTextBox();
             this.listarExtratoButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -41,12 +42,13 @@
             this.listView1.Size = new System.Drawing.Size(373, 383);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // cnhExtratoLabel
             // 
             this.cnhExtratoLabel.AutoSize = true;
             this.cnhExtratoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnhExtratoLabel.Location = new System.Drawing.Point(64, 21);
+            this.cnhExtratoLabel.Location = new System.Drawing.Point(24, 21);
             this.cnhExtratoLabel.Name = "cnhExtratoLabel";
             this.cnhExtratoLabel.Size = new System.Drawing.Size(56, 20);
             this.cnhExtratoLabel.TabIndex = 2;
@@ -55,7 +57,7 @@
             // cnhExtratoMaskTextBox
             // 
             this.cnhExtratoMaskTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cnhExtratoMaskTextBox.Location = new System.Drawing.Point(126, 18);
+            this.cnhExtratoMaskTextBox.Location = new System.Drawing.Point(76, 15);
             this.cnhExtratoMaskTextBox.Mask = "00000000000";
             this.cnhExtratoMaskTextBox.Name = "cnhExtratoMaskTextBox";
             this.cnhExtratoMaskTextBox.Size = new System.Drawing.Size(114, 26);
@@ -64,7 +66,7 @@
             // listarExtratoButton
             // 
             this.listarExtratoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listarExtratoButton.Location = new System.Drawing.Point(246, 21);
+            this.listarExtratoButton.Location = new System.Drawing.Point(196, 15);
             this.listarExtratoButton.Name = "listarExtratoButton";
             this.listarExtratoButton.Size = new System.Drawing.Size(75, 26);
             this.listarExtratoButton.TabIndex = 6;
@@ -72,12 +74,23 @@
             this.listarExtratoButton.UseVisualStyleBackColor = true;
             this.listarExtratoButton.Click += new System.EventHandler(this.listarExtratoButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(277, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // ExtratoDeMultasDeUmCondutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(427, 445);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listarExtratoButton);
             this.Controls.Add(this.cnhExtratoMaskTextBox);
             this.Controls.Add(this.cnhExtratoLabel);
@@ -96,5 +109,6 @@
         private System.Windows.Forms.Label cnhExtratoLabel;
         private System.Windows.Forms.MaskedTextBox cnhExtratoMaskTextBox;
         private System.Windows.Forms.Button listarExtratoButton;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -34,6 +34,7 @@
             this.condutoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taxasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquisasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veículosPorCondutorEMultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.condutorIrregularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.taxasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,7 @@
             this.carregarDadosToolStripMenuItem.Name = "carregarDadosToolStripMenuItem";
             this.carregarDadosToolStripMenuItem.Size = new System.Drawing.Size(415, 22);
             this.carregarDadosToolStripMenuItem.Text = "Ler os dados acima de arquivos de condutores, veículos e multas";
+            this.carregarDadosToolStripMenuItem.Click += new System.EventHandler(this.carregarDadosToolStripMenuItem_Click);
             // 
             // condutoresToolStripMenuItem
             // 
@@ -102,6 +103,13 @@
             this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veículosToolStripMenuItem_Click);
+            // 
+            // taxasToolStripMenuItem
+            // 
+            this.taxasToolStripMenuItem.Name = "taxasToolStripMenuItem";
+            this.taxasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.taxasToolStripMenuItem.Text = "Taxas";
+            this.taxasToolStripMenuItem.Click += new System.EventHandler(this.taxasToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -203,13 +211,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // taxasToolStripMenuItem
-            // 
-            this.taxasToolStripMenuItem.Name = "taxasToolStripMenuItem";
-            this.taxasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.taxasToolStripMenuItem.Text = "Taxas";
-            this.taxasToolStripMenuItem.Click += new System.EventHandler(this.taxasToolStripMenuItem_Click);
             // 
             // Entrada
             // 

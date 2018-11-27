@@ -59,42 +59,57 @@ namespace TI_FINAL_AED
 
         private void verificaPlacaButton_Click(object sender, EventArgs e)
         {
-            string placa = placaMaskedTextBox.Text;
-            Veiculos veiculo = veiculos.buscar(placa);
-            if (veiculo != null)
+            if (placaMaskedTextBox.Text == "")
             {
-                if (veiculo.verificaRegularidadeVeiculo())
-                {
-                    MessageBox.Show("Veículo Regular");
-                }
-                else
-                {
-                    MessageBox.Show("Veículo Irregular");
-                }
+
+                MessageBox.Show("Campo Vazio - Informe uma Placa");
             }
             else
             {
-                MessageBox.Show("Veículo não encontrado");
+                string placa = placaMaskedTextBox.Text.ToUpper();
+                Veiculos veiculo = veiculos.buscar(placa);
+                if (veiculo != null)
+                {
+                    if (veiculo.verificaRegularidadeVeiculo())
+                    {
+                        MessageBox.Show("Veículo Regular");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veículo Irregular");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Veículo não encontrado");
+                }
             }
         }
         private void verificaCNHButton_Click(object sender, EventArgs e)
         {
-            string cnhCondutor = cnhMaskedTextBox.Text;
-            Condutores condutor = condutores.buscar(cnhCondutor);
-            if (condutor != null)
+            if (cnhMaskedTextBox.Text == "")
             {
-                if (condutor.verificarRegularidadeCNH())
-                {
-                    MessageBox.Show("Condutor Regular");
-                }
-                else
-                {
-                    MessageBox.Show("Condutor Irregular");
-                }
+                MessageBox.Show("Campo Vazio - Informe uma CNH");
             }
             else
             {
-                MessageBox.Show("Condutor não encontrado");
+                string cnhCondutor = cnhMaskedTextBox.Text;
+                Condutores condutor = condutores.buscar(cnhCondutor);
+                if (condutor != null)
+                {
+                    if (condutor.verificarRegularidadeCNH())
+                    {
+                        MessageBox.Show("Condutor Regular");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Condutor Irregular");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Condutor não encontrado");
+                }
             }
         }
     }
