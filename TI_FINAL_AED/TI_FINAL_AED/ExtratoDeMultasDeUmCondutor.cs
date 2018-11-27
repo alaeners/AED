@@ -25,13 +25,21 @@ namespace TI_FINAL_AED
         }
         private void listarExtratoButton_Click(object sender, EventArgs e)
         {
-           string cnhCondutor = cnhExtratoMaskTextBox.Text;
-           Condutores condutor = condutores.buscar(cnhCondutor);
-           MultasNo auxMultas = condutor.listaMultasPorCondutor.sentinela;
-            while (auxMultas.prox != null)
+            listView1.Clear();
+            if (cnhExtratoMaskTextBox.Text == "") 
             {
-                auxMultas = auxMultas.prox;
-                listView1.Items.Add(auxMultas.multa.veiculo.placa + " " + auxMultas.multa.dataEmissao.ToShortDateString());
+                MessageBox.Show("Campo Vazio - Informe uma CNH");
+            }
+            else
+            {
+                string cnhCondutor = cnhExtratoMaskTextBox.Text;
+                Condutores condutor = condutores.buscar(cnhCondutor);
+                MultasNo auxMultas = condutor.listaMultasPorCondutor.sentinela;
+                while (auxMultas.prox != null)
+                {
+                    auxMultas = auxMultas.prox;
+                    listView1.Items.Add(condutor.nomeCondutor+" "+auxMultas.multa.veiculo.placa + " " + auxMultas.multa.dataEmissao.ToShortDateString());
+                }
             }
 
         }

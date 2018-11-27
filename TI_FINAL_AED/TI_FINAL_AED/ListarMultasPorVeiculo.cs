@@ -26,21 +26,28 @@ namespace TI_FINAL_AED
 
         private void listaMultaPorVeiculoButton_Click(object sender, EventArgs e)
         {
-            multasPorVeiculoListView.Items.Clear();
-            string placa = placaMaskedTextBox.Text;
-            Veiculos veiculo = veiculosHash.buscar(placa);
-            MultasNo auxMultas = veiculo.listaMultasPorVeiculo.sentinela;
-            if (veiculo != null)
+            if (placaMaskedTextBox.Text == "")
             {
-                while (auxMultas.prox != null)
-                {
-                    auxMultas = auxMultas.prox;
-                    multasPorVeiculoListView.Items.Add(auxMultas.multa.condutor.habilitacaoCondutor.cnh + " " + auxMultas.multa.dataEmissao.ToShortDateString());
-                }
+                MessageBox.Show("Campo Vazio - Informe uma Placa");
             }
             else
             {
-                MessageBox.Show("Veículo não encontrado");
+                multasPorVeiculoListView.Items.Clear();
+                string placa = placaMaskedTextBox.Text.ToUpper();
+                Veiculos veiculo = veiculosHash.buscar(placa);
+                MultasNo auxMultas = veiculo.listaMultasPorVeiculo.sentinela;
+                if (veiculo != null)
+                {
+                    while (auxMultas.prox != null)
+                    {
+                        auxMultas = auxMultas.prox;
+                        multasPorVeiculoListView.Items.Add(auxMultas.multa.condutor.habilitacaoCondutor.cnh + " " + auxMultas.multa.dataEmissao.ToShortDateString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Veículo não encontrado");
+                }
             }
         }
     }

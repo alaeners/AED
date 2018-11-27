@@ -13,3 +13,18 @@ C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\o
 C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.RelatorioDeVeiculoSemMulta.resources
 C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.VeiculoOuCondutorIrregular.resources
 C:\Users\Pedro\Documents\Visual Studio 2017\Projects\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.ExtratoDeMultasDeUmCondutor.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\bin\Debug\TI_FINAL_AED.exe.config
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\bin\Debug\TI_FINAL_AED.exe
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\bin\Debug\TI_FINAL_AED.pdb
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.csprojAssemblyReference.cache
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.Entrada.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.ExtratoDeMultasDeUmCondutor.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.ListarMultasPorVeiculo.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.ListarVeiculosConduziuLevouMulta.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.Properties.Resources.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.RelatorioDeVeiculoSemMulta.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.VeiculoOuCondutorIrregular.resources
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.csproj.GenerateResource.cache
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.csproj.CoreCompileInputs.cache
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.exe
+C:\Users\Alaene\Downloads\AED-master\AED-master\TI_FINAL_AED\TI_FINAL_AED\obj\Debug\TI_FINAL_AED.pdb

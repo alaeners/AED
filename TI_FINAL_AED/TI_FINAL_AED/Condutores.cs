@@ -8,7 +8,7 @@ namespace TI_FINAL_AED
 {
     public class Condutores
     {
-        string nomeCondutor; 
+        public string nomeCondutor; 
         public CNH habilitacaoCondutor;
         public MultasListas listaMultasPorCondutor;
 
